@@ -121,7 +121,6 @@ void blur5x5(float* values, int width, int height){
 bool save_image(const char* pixels, int width, int height, int name_index) {
     // Create the subdirectory if it doesn't exist
     const std::string subdirectory = "./img/";
-    mkdir(subdirectory.c_str(), 0777); // Using POSIX mkdir function
 
     // Construct the full file path
     char name[20];
@@ -151,7 +150,7 @@ bool save_image(const char* pixels, int width, int height, int name_index) {
 }
 
 
-unsigned long hash(unsigned long a){
+uint64_t hash(uint64_t a){
     a *= 0xabc197e889a92f18ul;
     a ^= 0x2f69a1b24d316bc2ul;
     a *= 0x1271765825487697ul;
